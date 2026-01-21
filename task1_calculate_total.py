@@ -43,7 +43,12 @@ def calculate_total(prices, max_items=None):
     # Hint 1: Check if prices is empty first
     # Hint 2: Use slicing if max_items is provided: prices[:max_items]
     # Hint 3: Use sum() and round() for the final result
-    pass
+    prices_mod = []
+    if max_items and max_items <= len(prices):
+        prices_mod = prices[:max_items]
+    else:
+        prices_mod = prices.copy()
+    return round(sum(prices_mod),2)
 
 
 # =============================================================================
